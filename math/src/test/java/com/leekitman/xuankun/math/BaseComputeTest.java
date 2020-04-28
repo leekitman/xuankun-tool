@@ -3,7 +3,7 @@ package com.leekitman.xuankun.math;
 import com.leekitman.xuankun.math.exception.XuankunCodeError;
 import org.junit.Test;
 
-public class PlusTest {
+public class BaseComputeTest {
 
     @Test
     public void aa1() {
