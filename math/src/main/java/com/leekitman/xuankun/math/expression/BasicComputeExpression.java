@@ -51,10 +51,6 @@ public abstract class BasicComputeExpression implements Expression {
         return this;
     }
 
-
-    public abstract Number getResult() throws XuankunCodeError;
-
-
     public void check() throws XuankunCodeError {
         switch (state) {
             case DOUBLE_NUMBER:
