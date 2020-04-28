@@ -36,7 +36,7 @@ public class BaseComputeTest {
     }
 
     /**
-     * all-(8-7)-[6-(5-4)]-(3-2)
+     * all-(8-7)-[6-(5-4)]-(3-2)-7
      */
     @Test
     public void aa3() throws XuankunCodeError {
