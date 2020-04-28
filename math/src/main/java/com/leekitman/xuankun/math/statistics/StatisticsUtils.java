@@ -10,6 +10,9 @@ public interface StatisticsUtils {
 
     /**
      * 求平均数
+     * @param numbers 数集
+     * @return 数集的平均值
+     * @throws XuankunCodeError 可能抛出代码错误问题
      */
     static Number average(List<Number> numbers) throws XuankunCodeError {
         if (numbers == null || numbers.isEmpty()) {
