@@ -49,16 +49,19 @@ public class BaseComputeTest {
         Integer e = 7;
         Integer f = 8;
         // 转换成加法公式：
-        System.out.println(XKM.minus().compute(             //【all-(8-7)-[6-(5-4)]】-【(3-2)】
-                XKM.minus().compute(                        //【all-(8-7)】-【6-(5-4)】
-                        XKM.minus().compute(all,            //【all】-【8-7】
-                                XKM.minus().compute(f, e)   //【8】-【7】
+        System.out.println(XKM.minus().compute(             //【all-(8-7)-[6-(5-4)]-(3-2)】-【7】
+                XKM.minus().compute(             //【all-(8-7)-[6-(5-4)]】-【(3-2)】
+                        XKM.minus().compute(                        //【all-(8-7)】-【6-(5-4)】
+                                XKM.minus().compute(all,            //【all】-【8-7】
+                                        XKM.minus().compute(f, e)   //【8】-【7】
+                                ),
+                                XKM.minus().compute(d,              //【6】-【5-4】
+                                        XKM.minus().compute(c, b)   //【5】-【4】
+                                )
                         ),
-                        XKM.minus().compute(d,              //【6】-【5-4】
-                                XKM.minus().compute(c, b)   //【5】-【4】
-                        )
+                        XKM.minus().compute(a, z)                   //【3】-【2】
                 ),
-                XKM.minus().compute(a, z)                   //【3】-【2】
+                e
         ).getResult());
     }
 
