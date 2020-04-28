@@ -6,7 +6,7 @@ import com.leekitman.xuankun.math.exception.XuankunNullArgumentException;
 import lombok.Data;
 
 /**
- * 二值运算表达式
+ * 基本运算法则
  */
 @Data
 public abstract class BasicComputeExpression implements Expression {
