@@ -6,7 +6,7 @@ import com.leekitman.xuankun.math.exception.XuankunDividedByZeroException;
 /**
  * 除法运算
  */
-public class Divided extends TwoUnitExpression {
+public class Divided extends BasicComputeExpression {
     @Override
     public Number getResult() throws XuankunCodeError {
         switch (getState()) {

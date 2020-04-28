@@ -9,7 +9,7 @@ import lombok.Data;
  * 二值运算表达式
  */
 @Data
-public abstract class TwoUnitExpression implements Expression {
+public abstract class BasicComputeExpression implements Expression {
 
     private Expression leftExpression;
     private Expression rightExpression;

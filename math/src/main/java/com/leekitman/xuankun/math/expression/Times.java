@@ -5,7 +5,7 @@ import com.leekitman.xuankun.math.exception.XuankunCodeError;
 /**
  * 乘法运算
  */
-public class Times extends TwoUnitExpression{
+public class Times extends BasicComputeExpression {
     @Override
     public Number getResult() throws XuankunCodeError {
         switch (getState()) {

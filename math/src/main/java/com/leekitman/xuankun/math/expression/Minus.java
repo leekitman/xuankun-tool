@@ -5,7 +5,7 @@ import com.leekitman.xuankun.math.exception.XuankunCodeError;
 /**
  * 减法运算
  */
-public class Minus extends TwoUnitExpression {
+public class Minus extends BasicComputeExpression {
 
     @Override
     public Number getResult() throws XuankunCodeError {
