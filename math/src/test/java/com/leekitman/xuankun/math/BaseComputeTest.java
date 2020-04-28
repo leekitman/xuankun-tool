@@ -32,7 +32,7 @@ public class BaseComputeTest {
                         XKM.plus().compute(c, d)
                 ),
                 XKM.plus().compute(e, f)
-        ));
+        ).getResult());
     }
 
     /**
@@ -68,7 +68,7 @@ public class BaseComputeTest {
     @Test
     public void aa4() throws XuankunCodeError {
         Double a = 3.5;
-        System.out.println(XKM.times().compute(a, a));
+        System.out.println(XKM.times().compute(a, a).getResult());
     }
 
     @Test
@@ -76,6 +76,6 @@ public class BaseComputeTest {
         Double a = 3.5;
         Double b = 0.0;
         Integer c = 5;
-        System.out.println(XKM.divided().compute(a, c));
+        System.out.println(XKM.divided().compute(a, c).getResult());
     }
 }
