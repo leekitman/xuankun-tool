@@ -19,28 +19,36 @@ public abstract class BasicComputeExpression implements Expression {
 
     private State state;
 
-    public Number compute(Number left, Number right) throws XuankunCodeError {
+    public Expression compute(Number left, Number right) throws XuankunCodeError {
         state = State.DOUBLE_NUMBER;
         setLeftNumber(left);
         setRightNumber(right);
         check();
-        return getResult();
+        return this;
     }
 
-    public Number compute(Expression left, Number right) throws XuankunCodeError {
+    public Expression compute(Expression left, Number right) throws XuankunCodeError {
         state = State.EXPRESSION_NUMBER;
         setLeftExpression(left);
         setRightNumber(right);
         check();
-        return getResult();
+        return this;
     }
 
-    public Number compute(Expression left, Expression right) throws XuankunCodeError {
+    public Expression compute(Number left, Expression right) throws XuankunCodeError {
+        state = State.NUMBER_EXPRESSION;
+        setLeftNumber(left);
+        setRightExpression(right);
+        check();
+        return this;
+    }
+
+    public Expression compute(Expression left, Expression right) throws XuankunCodeError {
         state = State.DOUBLE_EXPRESSION;
         setLeftExpression(left);
         setRightExpression(right);
         check();
-        return getResult();
+        return this;
     }
 
 
@@ -55,12 +63,17 @@ public abstract class BasicComputeExpression implements Expression {
                 }
                 break;
             case DOUBLE_EXPRESSION:
-                if (getLeftExpression() == null || getRightNumber() == null) {
+                if (getLeftExpression() == null || getRightExpression() == null) {
+                    throw new XuankunNullArgumentException();
+                }
+                break;
+            case NUMBER_EXPRESSION:
+                if (getLeftNumber() == null || getRightExpression() == null) {
                     throw new XuankunNullArgumentException();
                 }
                 break;
             case EXPRESSION_NUMBER:
-                if (getLeftExpression() == null || getRightExpression() == null) {
+                if (getLeftExpression() == null || getRightNumber() == null) {
                     throw new XuankunNullArgumentException();
                 }
                 break;
@@ -73,6 +86,7 @@ public abstract class BasicComputeExpression implements Expression {
 
         DOUBLE_NUMBER,
         DOUBLE_EXPRESSION,
+        NUMBER_EXPRESSION,
         EXPRESSION_NUMBER
     }
 }

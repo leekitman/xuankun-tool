@@ -59,7 +59,7 @@ public class BaseComputeTest {
                         )
                 ),
                 XKM.minus().compute(a, z)                   //【3】-【2】
-        ));
+        ).getResult());
     }
 
     @Test
